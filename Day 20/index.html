@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bottom Navigation Bar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            height: 100vh; /* Full height for the body */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end; /* Align content to the bottom */
+        }
+
+        .container {
+            display: flex;
+            height: 60px; /* Fixed height for the container */
+            background-color: #F2F2F7;
+            border-top: 1px solid #C6C6C8;
+            position: fixed; /* Fixed position at the bottom */
+            bottom: 0; /* Align to the bottom */
+            left: 0; /* Align to the left */
+            right: 0; /* Align to the right */
+            overflow: hidden; /* Prevent overflow */
+            /* Adjust height for smaller screens */
+        }
+
+        .tab-item {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            position: relative; /* For positioning the box */
+            /* Ensure items are responsive */
+            min-width: 60px; /* Minimum width for each tab */
+        }
+
+        .tab-text {
+            font-size: 10px;
+            margin-top: 4px;
+            color: #8E8E93;
+            /* Adjust font size for mobile */
+        }
+
+        .tab-item.active .tab-text,
+        .tab-item.active .icon {
+            color: #007AFF; /* Change color for active item */
+        }
+
+        /* Box for the active tab */
+        .active-box {
+            position: absolute;
+            bottom: 60px; /* Position above the tab items */
+            width: 80px; /* Box width */
+            height: 4px; /* Box height */
+            background-color: #007AFF; /* Box color */
+            left: 50%; /* Center the box initially */
+            transform: translateX(-50%); /* Adjust for centering */
+            transition: transform 0.3s ease; /* Smooth transition */
+        }
+
+        .tab-item.active {
+            animation: float 0.5s ease-in-out infinite alternate; /* Add floating animation */
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-5px); } /* Adjust the float height */
+        }
+
+        @media (max-width: 600px) {
+            .tab-text {
+                font-size: 8px; /* Smaller font size for mobile */
+            }
+
+            .active-box {
+                width: 60px; /* Adjust box width for mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="active-box"></div> <!-- Box for active tab -->
+        <div class="tab-item" data-tab="Coding">
+            <i class="icon fas fa-code"></i>
+            <span class="tab-text">Coding</span>
+        </div>
+        <div class="tab-item" data-tab="Errors">
+            <i class="icon fas fa-exclamation-triangle"></i>
+            <span class="tab-text">Errors</span>
+        </div>
+        <div class="tab-item" data-tab="Coffee">
+            <i class="icon fas fa-coffee"></i>
+            <span class="tab-text">Coffee</span>
+        </div>
+        <div class="tab-item" data-tab="Sleep">
+            <i class="icon fas fa-bed"></i>
+            <span class="tab-text">Sleep</span>
+        </div>
+    </div>
+
+    <script>
+        const tabItems = document.querySelectorAll('.tab-item');
+        const activeBox = document.querySelector('.active-box');
+
+        tabItems.forEach((item, index) => {
+            item.addEventListener('click', () => {
+                // Remove active class from all items
+                tabItems.forEach(tab => {
+                    tab.classList.remove('active');
+                    tab.style.animation = ''; // Reset animation
+                });
+                
+                // Add active class to the clicked item
+                item.classList.add('active');
+                item.style.animation = 'float 0.5s ease-in-out infinite alternate'; // Start animation
+
+                // Move the box to the center of the clicked item
+                const translateX = index * 80; // Assuming each tab is 80px wide
+                activeBox.style.transform = `translateX(${translateX}px)`; // Move box
+            });
+        });
+    </script>
+</body>
+</html>

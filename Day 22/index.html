@@ -1,0 +1,104 @@
+<html>
+<head>
+    <title>Responsive Cards CSS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #ffffff; /* White background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            padding: 20px; /* Added padding for better spacing */
+        }
+        h1 {
+            font-size: 2.5em; /* Increased font size */
+            margin-bottom: 20px;
+            color: #000; /* Black text color */
+        }
+        .cards {
+            display: flex;
+            flex-wrap: wrap; /* Added to make it responsive */
+            justify-content: center;
+            gap: 20px;
+        }
+        .card {
+            background: #f5f5f5; /* Light gray background for cards */
+            border: 1px solid #000; /* Black border */
+            border-radius: 10px;
+            padding: 20px;
+            width: 200px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+            transition: transform 0.3s; /* Added transition for hover effect */
+        }
+        .card:hover {
+            transform: translateY(-5px); /* Added hover effect */
+        }
+        .card i {
+            font-size: 2.5em; /* Increased icon size */
+            margin-bottom: 10px;
+            color: #000; /* Black icon color */
+        }
+        .card h2 {
+            font-size: 1.5em; /* Increased heading size */
+            margin: 10px 0;
+            color: #000; /* Black text for headings */
+        }
+        .card p {
+            font-size: 1em; /* Increased paragraph size */
+            color: #666; /* Gray text for paragraphs */
+            margin-bottom: 20px;
+        }
+        .card a {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #000; /* Black button color */
+            color: #fff; /* White text for button */
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .card a:hover {
+            background: #333; /* Darker gray on hover */
+        }
+        @media (max-width: 600px) { /* Responsive adjustments */
+            .card {
+                width: 90%; /* Full width on small screens */
+            }
+            h1 {
+                font-size: 2em; /* Adjusted heading size */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Social Media Cards</h1>
+        <div class="cards">
+            <div class="card">
+                <i class="fab fa-twitter"></i>
+                <h2>TWITTER</h2>
+                <p>WebCodeX</p>
+                <a href="#">FOLLOW</a>
+            </div>
+            <div class="card">
+                <i class="fab fa-instagram"></i>
+                <h2>INSTAGRAM</h2>
+                <p>WebCodeX</p>
+                <a href="#">FOLLOW</a>
+            </div>
+            <div class="card">
+                <i class="fab fa-youtube"></i>
+                <h2>YOUTUBE</h2>
+                <p>WebCodeX</p>
+                <a href="#">SUBSCRIBE</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

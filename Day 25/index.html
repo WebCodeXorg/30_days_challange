@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Futuristic Toggle Buttons</title>
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #1a1a1a;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+    }
+    h1, h2 {
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 20px;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 15px;
+        width: 150px;
+        height: 60px;
+        margin: 10px;
+        border: none;
+        border-radius: 50px;
+        background: linear-gradient(45deg, #08f, #0ff);
+        color: #fff;
+        font-size: 1rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.5s, box-shadow 0.5s, transform 0.3s ease;
+        box-shadow: 0 8px 15px rgba(0, 255, 255, 0.2);
+    }
+
+    .btn.active {
+        background: linear-gradient(45deg, #333, #444);
+        box-shadow: 0 8px 30px rgba(255, 255, 255, 0.5);
+    }
+
+    /* Hover effect for only one button */
+    .btn:hover, .btn.active {
+        background: linear-gradient(45deg, #0ff, #08f);
+        transform: scale(1.1);
+    }
+
+    /* Equal width and height for all buttons */
+    .btn-container {
+        display: flex;
+        justify-content: center;
+    }
+
+    #toggleBtnGroup {
+        display: flex;
+        justify-content: center;
+    }
+
+    /* Toggle Switch Styles */
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+        margin: 10px;
+    }
+
+    .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    .slider {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #444;
+        transition: 0.4s;
+        border-radius: 34px;
+    }
+
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: #fff;
+        transition: 0.4s;
+        border-radius: 50%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    }
+
+    input:checked + .slider {
+        background-color: #08f;
+    }
+
+    input:checked + .slider:before {
+        transform: translateX(26px);
+        background-color: #0ff;
+    }
+
+</style>
+</head>
+<body>
+
+
+<div class="btn-container">
+    <button class="btn" id="btn1">Button 1</button>
+    <button class="btn" id="btn2">Button 2</button>
+    <button class="btn" id="btn3">Button 3</button>
+</div>
+
+<div id="toggleBtnGroup">
+    <button class="btn" id="optionA">Option A</button>
+    <button class="btn" id="optionB">Option B</button>
+    <button class="btn" id="optionC">Option C</button>
+</div>
+
+<label class="switch">
+    <input type="checkbox">
+    <span class="slider"></span>
+</label>
+
+<label class="switch">
+    <input type="checkbox" checked>
+    <span class="slider"></span>
+</label>
+
+<script>
+    const buttons = document.querySelectorAll('.btn-container .btn');
+    
+    buttons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Remove active class from all buttons
+            buttons.forEach(btn => btn.classList.remove('active'));
+            // Add active class to the clicked button
+            this.classList.add('active');
+        });
+
+        button.addEventListener('mouseover', function() {
+            // Remove active class from all buttons on hover
+            buttons.forEach(btn => btn.classList.remove('active'));
+            // Add active class to the hovered button
+            this.classList.add('active');
+        });
+    });
+
+    const toggleButtons = document.querySelectorAll('#toggleBtnGroup .btn');
+    
+    toggleButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Remove active class from all toggle buttons
+            toggleButtons.forEach(btn => btn.classList.remove('active'));
+            // Add active class to the clicked button
+            this.classList.add('active');
+        });
+
+        button.addEventListener('mouseover', function() {
+            // Remove active class from all toggle buttons on hover
+            toggleButtons.forEach(btn => btn.classList.remove('active'));
+            // Add active class to the hovered button
+            this.classList.add('active');
+        });
+    });
+</script>
+
+</body>
+</html>

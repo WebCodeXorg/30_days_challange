@@ -1,0 +1,129 @@
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            display: flex;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%); /* Dark gradient background */
+            font-family: Arial, sans-serif;
+        }
+        .sidebar {
+            background: rgba(0, 0, 0, 0.4); /* Dark semi-transparent background */
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+            padding: 20px;
+            width: 200px;
+            transition: width 0.3s;
+            overflow: hidden;
+            backdrop-filter: blur(10px) saturate(150%); /* Enhanced glass effect */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        }
+        .sidebar.collapsed {
+            width: 60px;
+        }
+        .sidebar .toggle-btn {
+            background-color: rgba(255, 255, 255, 0.3); /* Semi-transparent background */
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            cursor: pointer;
+            margin-bottom: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            user-select: none; /* Prevent text selection */
+        }
+        .sidebar .profile-item {
+            display: flex;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.3); /* Semi-transparent background */
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 10px;
+            transition: opacity 0.3s, background-color 0.3s;
+            cursor: pointer; /* Change cursor to pointer */
+            user-select: none; /* Prevent text selection */
+        }
+        .sidebar .profile-item:hover {
+            background-color: rgba(255, 255, 255, 0.5); /* Darker hover effect */
+        }
+        .sidebar .profile-item:active {
+            background-color: rgba(255, 255, 255, 0.7); /* Active effect */
+        }
+        .sidebar .profile-item:last-child {
+            margin-bottom: 0;
+        }
+        .sidebar.collapsed .profile-item .text {
+            opacity: 0;
+        }
+        .sidebar .profile-item .icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.3s; /* Add transition for animation */
+        }
+        .sidebar .profile-item .text {
+            font-size: 14px;
+            color: #fff; /* White text for contrast */
+            user-select: none; /* Prevent text selection */
+        }
+        .sidebar .profile-item.active .icon {
+            transform: rotate(360deg); /* Rotate icon on click */
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar" id="sidebar">
+        <button class="toggle-btn" onclick="toggleSidebar()">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="profile-item" onclick="animateIcon(this)">
+            <div class="icon"><i class="fas fa-user"></i></div>
+            <div class="text">Profile</div>
+        </div>
+        <div class="profile-item" onclick="animateIcon(this)">
+            <div class="icon"><i class="fas fa-home"></i></div>
+            <div class="text">Home</div>
+        </div>
+        <div class="profile-item" onclick="animateIcon(this)">
+            <div class="icon"><i class="fas fa-envelope"></i></div>
+            <div class="text">Messages</div>
+        </div>
+        <div class="profile-item" onclick="animateIcon(this)">
+            <div class="icon"><i class="fas fa-cog"></i></div>
+            <div class="text">Settings</div>
+        </div>
+        <div class="profile-item" onclick="animateIcon(this)">
+            <div class="icon"><i class="fas fa-bell"></i></div>
+            <div class="text">Notifications</div>
+        </div>
+        <div class="profile-item" onclick="animateIcon(this)">
+            <div class="icon"><i class="fas fa-question-circle"></i></div>
+            <div class="text">Help</div>
+        </div>
+        <div class="profile-item" onclick="animateIcon(this)">
+            <div class="icon"><i class="fas fa-sign-out-alt"></i></div>
+            <div class="text">Logout</div>
+        </div>
+    </div>
+
+    <script>
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('collapsed');
+        }
+
+        function animateIcon(item) {
+            item.classList.add('active');
+            setTimeout(() => {
+                item.classList.remove('active');
+            }, 300); // Duration of the animation
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<html>
+<head>
+    <title>Login Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            font-family: 'Arial', sans-serif;
+        }
+        .login-container {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+        .login-container h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .input-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        .input-group label {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        .input-group i {
+            position: absolute;
+            margin-left: 10px;
+            margin-top: 12px;
+            color: #ccc;
+        }
+        .input-group input::placeholder {
+            color: #ccc;
+        }
+        .forgot-password {
+            text-align: right;
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        .login-btn {
+            background: linear-gradient(90deg, #43e97b, #38f9d7);
+            border: none;
+            padding: 10px;
+            width: 100%;
+            border-radius: 5px;
+            color: white;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        .social-login {
+            margin: 20px 0;
+        }
+        .social-login a {
+            margin: 0 10px;
+            font-size: 20px;
+            color: #666;
+        }
+        .signup {
+            font-size: 14px;
+            color: #666;
+        }
+        .signup a {
+            color: #000000;
+            text-decoration: none;
+            font-weight: bold;
+            background-color: rgb(0, 247, 255);
+            padding: 10px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <div class="input-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" placeholder="Type your username">
+        </div>
+        <div class="input-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Type your password" required>
+        </div>
+        <div class="forgot-password">
+            <a href="#">Forgot password?</a>
+        </div>
+        <button class="login-btn">LOGIN</button>
+        <div class="social-login">
+            <p>Or Sign Up Using</p>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-google"></i></a>
+        </div>
+        <div class="signup">
+            <p>Or Sign Up Using</p>
+            <br>
+            <a href="#" class="button">SIGN UP</a>
+        </div>
+    </div>
+</body>
+</html>

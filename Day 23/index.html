@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebCodeX Sidebar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #d8e1e9; /* Changed to light background color */
+        }
+        .sidebar {
+            width: 250px;
+            background-color: #d8e1e9; /* Set sidebar background to light color */
+            height: 100vh;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.2); /* Enhanced shadow for depth */
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .logo img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+        .logo h1 {
+            font-size: 24px;
+            margin: 0;
+        }
+        .menu-item {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            margin-bottom: 5px;
+            border: 1px solid #0056b3; /* Darker border for better contrast */
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.2s; /* Added transform for hover effect */
+        }
+        .menu-item:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+            transform: scale(1.02); /* Slightly enlarge on hover */
+        }
+        .menu-item i {
+            margin-right: 10px;
+            font-size: 20px;
+        }
+        .divider {
+            height: 1px;
+            background-color: #0056b3; /* Darker divider for consistency */
+            margin: 15px 0;
+        }
+        .social-links {
+            margin-top: 20px;
+        }
+        .social-links .menu-item i {
+            font-size: 24px;
+            color: #000000; /* Changed icon color to black for better visibility */
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <img src="/api/placeholder/40/40" alt="WebCodeX Logo">
+            <h1>WebCodeX</h1>
+        </div>
+        
+        <div class="menu-item"><i class="fas fa-home"></i> Home</div>
+        <div class="menu-item"><i class="fas fa-info-circle"></i> About</div>
+        <div class="menu-item"><i class="fas fa-envelope"></i> Contact Us</div>
+        <div class="menu-item"><i class="fas fa-cog"></i> Settings</div>
+        
+        <div class="divider"></div>
+        
+        <div class="menu-item"><i class="fas fa-comment"></i> Feedback</div>
+        <div class="menu-item"><i class="fas fa-question-circle"></i> Help & Support</div>
+        
+        <div class="divider"></div>
+        
+        <div class="social-links">
+            <div class="menu-item"><i class="fab fa-instagram"></i> Instagram</div>
+            <div class="menu-item"><i class="fab fa-facebook"></i> Facebook</div>
+            <div class="menu-item"><i class="fab fa-youtube"></i> Youtube</div>
+            <div class="menu-item"><i class="fab fa-linkedin"></i> LinkedIn</div>
+            <div class="menu-item"><i class="fab fa-github"></i> GitHub</div>
+        </div>
+        
+        <div class="divider"></div>
+        
+        <div class="menu-item"><i class="fas fa-times"></i> Close</div>
+    </div>
+</body>
+</html>
